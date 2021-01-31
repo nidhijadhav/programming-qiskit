@@ -34,7 +34,7 @@ def run_job(circ_, backend_, shots_=1000, optimization_level_=0):
     job = execute(circ_, backend=backend_, shots=shots_, optimization_level=optimization_level_)
     job_monitor(job)
     return job.result().get_counts(circ_)
-    
+#load account    
 IBMQ.load_account()
 simulator_cloud = IBMQ.get_provider(hub='ibm-q',group='open',project='main').get_backend('ibmq_qasm_simulator')
 simulator = Aer.get_backend('qasm_simulator')
